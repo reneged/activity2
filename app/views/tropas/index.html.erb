@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tropas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Dob</th>
+      <th>Contactno</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tropas.each do |tropa| %>
+      <tr>
+        <td><%= tropa.name %></td>
+        <td><%= tropa.age %></td>
+        <td><%= tropa.dob %></td>
+        <td><%= tropa.contactNo %></td>
+        <td><%= link_to 'Show', tropa %></td>
+        <td><%= link_to 'Edit', edit_tropa_path(tropa) %></td>
+        <td><%= link_to 'Destroy', tropa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tropa', new_tropa_path %>
